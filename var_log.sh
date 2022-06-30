@@ -1,13 +1,8 @@
 #!/bin/bash
-folder=/var/log
-#echo "$folder:"
-for file in $folder
+for file in $(find /var/log -maxdepth 1 -type f -print0 |
+xargs -0 du -h |
+sort -rh)
 do
-#echo "$file"
-du -h $file 2>/dev/null |
-sort -rn |
-sed '{$D; =}' |
-sed 'N; s/\n/ /' |
-awk '{printf $1 ":" "\t" $2 "\t" $3 "\n"}' > var_log.txt
-done
+echo $file
+done > var_log.txt
 echo "Finished, look var_log.txt"
