@@ -1,6 +1,6 @@
 #!/bin/bash
 IFS=:
-for folder in /usr
+for folder in /usr/bin
 do
 echo "$folder:"
 for file in $folder/*
