@@ -6,3 +6,4 @@ do
 echo $file
 done > var_log.txt
 echo "Finished, look var_log.txt"
+
