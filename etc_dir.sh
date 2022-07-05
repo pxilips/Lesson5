@@ -12,3 +12,4 @@ fi
 done
 done > etc_dir.txt
 echo "Finished, look etc_dir.txt"
+
